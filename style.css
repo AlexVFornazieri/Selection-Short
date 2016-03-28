@@ -1,0 +1,108 @@
+body{
+    font-family: sans-serif, arial;
+}
+
+#container{
+    width: 800px;
+    min-height: 1050px;
+    margin: 0 auto;
+}
+
+.item{
+    width: 100px;
+    height: 100px;
+    border: red 1px solid;
+    float: left;
+    border-right: none;
+}
+
+.item.last{
+    border-right: red 1px solid;
+}
+
+.item.change{
+    background-color: #CCC;
+}
+
+.item.smaller{
+    background-color: #9acfea;
+}
+
+.item.tidy{
+    background-color: #f5e79e;
+}
+
+.item .content{
+    font-weight: bold;
+    font-size: 60px;
+    text-align: center;
+    display: block;
+    line-height: 100px;
+}
+
+.item .selector{
+    float: left;
+    padding: 2px;
+    font-size: 13px;
+    color: #000;
+}
+
+.clear{
+    clear: both;
+}
+
+#logRight{
+    padding: 20px;
+    border: #CCC 1px solid;
+    text-align: center;
+    position: absolute;
+    top: 110px;
+    right: 80px;
+    width: 200px;
+}
+.logRight .item{
+    float: none;
+    margin: 0 auto;
+}
+
+#auxVars{
+    width: 100px;
+    margin: 0 auto;
+}
+
+.auxVar header{
+    padding-bottom: 10px;
+}
+
+#resultOut .item{
+    height: 50px;
+    width: 50px;
+}
+
+#logContent .out{
+    float: left;
+}
+
+.vector .line{
+    float: left;
+    width: 70px;
+    line-height: 50px;
+}
+
+.vector{
+    margin-top: 20px;
+}
+
+#resultOut .item .content{
+    font-size: 30px;
+    line-height: 50px;
+}
+
+#logText{
+    border: #333 1px dashed;
+    border-radius: 5px;
+    width: 750px;
+    padding: 5px;
+    height: 120px;
+    margin-top: 20px;
+}
