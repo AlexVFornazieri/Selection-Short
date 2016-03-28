@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ordençao por seleção</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <section id="container">
+            <header>
+                <h1>Simulador de Ordenação por seleção</h1>
+            </header>
+            <div id="main">
+                <div class="vector"></div>
+
+                <div class="clear"></div>
+            </div>
+
+            <div id="logContent">
+
+                <div class="out">
+                    <div id="logText"></div>
+                    <div id="resultOut"></div>
+                </div>
+
+                <div id="logRight">
+
+                    <p><a class="btn btn-info btnNewVector">
+                            <i class="glyphicon glyphicon-pencil"></i>
+                            <span class="text">Alterar vetor</span>
+                        </a></p>
+
+                    <div class="btns" role="group">
+                        <p><a class="btn btn-primary btnNext">
+                                <i></i>
+                                <span class="text"></span>
+                            </a></p>
+
+                        <p><a class="btn btn-primary btnReset">
+                                <i class="glyphicon glyphicon-erase"></i>
+                                <span class="text">Reset</span>
+                            </a></p>
+                    </div>
+
+                    <div id="auxVars">
+                        <div class="auxVar aux">
+                            <div class="item last">
+                                <span class="selector">-</span>
+                                <span class="content">-</span>
+                            </div>
+                        </div>
+
+                        <div class="auxVar i">
+                            <div class="item last">
+                                <span class="selector">i</span>
+                                <span class="content">-</span>
+                            </div>
+                        </div>
+
+                        <div class="auxVar n">
+                            <div class="item last">
+                                <span class="selector">n</span>
+                                <span class="content">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Modal -->
+        <div class="modal fade" id="setVectorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">Definir novo vetor</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Valores</label>
+                                <input type="text" class="form-control" id="vectorInput">
+                                <div class="help-block">Insira valores separado por vírgula, Ex.: 1, 2, 3, 4</div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary btnSetVector">Definir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script type="text/javascript" src="jquery-2.1.4.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="actions.js"></script>
+
+    </body>
+</html>

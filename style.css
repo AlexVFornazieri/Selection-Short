@@ -1,11 +1,6 @@
 body{
     font-family: sans-serif, arial;
-}
-
-#container{
-    width: 800px;
-    min-height: 1050px;
-    margin: 0 auto;
+    position: relative;
 }
 
 .item{
@@ -24,8 +19,15 @@ body{
     background-color: #CCC;
 }
 
+#main{
+    float: left;
+    margin-left: 20px;
+}
+#main .vector.main{
+    margin-top: 0;
+}
 .item.smaller{
-    background-color: #9acfea;
+    background-color: #ce8483;
 }
 
 .item.tidy{
@@ -55,10 +57,8 @@ body{
     padding: 20px;
     border: #CCC 1px solid;
     text-align: center;
-    position: absolute;
-    top: 110px;
-    right: 80px;
-    width: 200px;
+    float: left;
+    width: 212px;
 }
 .logRight .item{
     float: none;
@@ -77,10 +77,6 @@ body{
 #resultOut .item{
     height: 50px;
     width: 50px;
-}
-
-#logContent .out{
-    float: left;
 }
 
 .vector .line{
@@ -103,6 +99,8 @@ body{
     border-radius: 5px;
     width: 750px;
     padding: 5px;
-    height: 120px;
+    height: 140px;
     margin-top: 20px;
+    font-weight: bold;
+    font-size: 18px;
 }

@@ -1,33 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>Ordençao por seleção</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-        <!-- Bootstrap -->
+        <title>Ordenação por seleção</title>
+
+        <!-- Bootstrap core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link type="text/css" rel="stylesheet" href="style.css">
+
+        <!-- Custom styles for this template -->
+        <link href="css/justified-nav.css" rel="stylesheet">
+
+        <link href="style.css" rel="stylesheet">
     </head>
-    <body>
 
-        <section id="container">
-            <header>
-                <h1>Simulador de Ordenação por seleção
-                </h1>
-            </header>
-            <div id="main">
-                <div class="vector"></div>
+    <body data-spy="scroll" data-target="#navbar">
 
-                <div class="clear"></div>
+        <!-- Fixed navbar -->
+        <div id="navbar">
+
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Método de Ordenação por Seleção</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="#inicio">início</a></li>
+                            <li><a href="#metodo">O método</a></li>
+                            <li><a href="#simulador">O Simulador</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </nav>
+        </div>
+
+        <div class="container">
+
+            <div id="inicio">
+                <!-- Jumbotron -->
+                <div class="jumbotron">
+                    <h1>Até que parace, mas não&nbsp;é&nbsp;mágica!</h1>
+                    <h2>Para cololcar tudo em ordem algoritimos são executados,<br> vamos aprender mais sobre os Métodos de Ordenação :&nbsp;)</h2>
+                </div>
             </div>
 
-            <div id="logContent">
+            <div id="metodo">
 
-                <div class="out">
-                    <div id="logText"></div>
-                    <div id="resultOut"></div>
+                <div class="page-header">
+                    <h1>O método de seleção</h1>
                 </div>
+
+                <h2>Um dos algoritmos mais simples</h2>
+                <p>
+                    A ordenação por seleção (do inglês, selection sort) é um algoritmo de ordenação baseado em se passar sempre o menor valor do vetor para a primeira posição (ou o maior dependendo da ordem requerida), depois o de segundo menor valor para a segunda posição, e assim é feito sucessivamente com os (n-1) elementos restantes, até os últimos dois elementos.
+                </p>
+                <img style="float: right;" src="files/Selection-Sort-Animation.gif">
+                <h2>Pricípios</h2>
+                <ol>
+                    <li>Seleciona o item com a menor chave;</li>
+                    <li>Seleciona o item com a menor chave;</li>
+                    <li>Troca este item com o item A [1];</li>
+                    <li>Repita a operação com os n − 1 itens restantes, depois com os n − 2</li>
+                    <li>Restantes, etc.</li>
+                </ol>
+                <h2>Exemplo</h2>
+                <p>
+                    <img src="files/exemplo.JPG">
+                </p>
+
+                <h1>Observações</h1>
+                <ul>
+                    <li>Vantagens:
+                        <ul>
+                            <li>É um dos métodos mais simples de ordenação existentes.</li>
+                            <li>Para arquivos com registros muito grandes e chaves pequenas, este deve ser o método a ser utilizado.</li>
+                            <li>Com chaves do tamanho de uma palavra, este método torna-se bastante interessante para arquivos pequenos.</li>
+                        </ul>
+                    </li>
+                    <li>Desvantagens:
+                        <ul>
+                            <li>O fato do arquivo já estar ordenado não ajuda em nada pois o custo continua quadrático.</li>
+                            <li>O algoritmo não é estável, pois ele nem sempre deixa os registros com chaves iguais na mesma posição relativa.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="simulador">
+                <div class="page-header">
+                    <h1>O simulador</h1>
+                </div>
+
 
                 <div id="logRight">
 
@@ -71,9 +146,28 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                <div id="main">
+                    <div class="vector main"></div>
 
-        </section>
+                    <div id="logContent">
+
+                        <div class="out">
+                            <div id="logText"></div>
+                            <div id="resultOut"></div>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+            <div class="clear"></div>
+            <!-- Site footer -->
+            <footer class="footer">
+                <p class="text-center">Acadêmicos do Curso de Sistemas de Informação</p>
+                <p class="text-center">UNIPAR - Universidade Paranaense - Paranavaí, Paraná, Brasil.</p>
+            </footer>
+        </div> <!-- /container -->
+
 
         <!-- Modal -->
         <div class="modal fade" id="setVectorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -102,13 +196,13 @@
             </div>
         </div>
 
-
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script type="text/javascript" src="jquery-2.1.4.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>
-
-        <script type="text/javascript" src="actions.js"></script>
-
     </body>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="jquery-2.1.4.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="actions.js"></script>
+
 </html>

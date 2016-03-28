@@ -1,4 +1,6 @@
-var vector = new Array(5, 3, 2, 6, 7, 9);
+var initVector = new Array(5, 3, 2, 6, 7, 4);
+
+var vector = initVector.slice();
 
 var $mainVector = $('#main .vector');
 
@@ -13,25 +15,26 @@ var aux_pos;
 reset();
 $('.btnReset').click(reset);
 
-$('.btnNewVector').click(function (){
+$('.btnNewVector').click(function () {
     $('#setVectorModal').modal('show');
 });
 
-$('.btnSetVector').click(function (){
-   
+$('.btnSetVector').click(function () {
+
     var vector_str = $('#vectorInput').val();
-    
+
     vector_str = vector_str.replace(/ /g, '');
-    
-    vector = vector_str.split(',');
-    
+
+    initVector = vector_str.split(',');
+
     reset();
-    
+
     $('#setVectorModal').modal('hide');
-    
+
 });
 
 function reset() {
+    vector = initVector.slice();
     renderHtmlVector(vector, $mainVector);
     last_pos = vector.length - 1;
     i = 0;
@@ -57,7 +60,7 @@ function selectionShort() {
         $('.btnNext i').attr('class', 'glyphicon glyphicon-ok');
         $('.btnNext').addClass('disabled').unbind('click');
         logText('O vetor está ordenado!');
-        logTidy(i+1);
+        logTidy(i + 1);
     }
 
     logCont(i, n);
@@ -110,9 +113,9 @@ function selectionShort() {
             text += ' NÂO!<br>Então vamos para o próximo >>';
         }
 
-        $('#main').find('.vector .item').removeClass('change');
-        $('#main').find('.vector .item' + n).addClass('change');
-        if(!logTexBusy)
+        $('#main').find('.vector.main .item').removeClass('change');
+        $('#main').find('.vector.main .item' + n).addClass('change');
+        if (!logTexBusy)
             logText(text);
     }
 
@@ -129,12 +132,12 @@ function selectionShort() {
         i++;
         logStr(vector, i);
 
-        $('.btnNext .text').html('Inciar #passo' + (i+1));
+        $('.btnNext .text').html('Inciar #passo' + (i + 1));
         $('.btnNext i').attr('class', 'glyphicon glyphicon-triangle-right');
-        
+
         var text = 'Percorrido todo o vetor efetuamos a troca do valor menor (aux) com a possição correta (i).';
         text += '<br>Com isso concluímos o #passo' + i;
-        
+
         logText(text);
     } else {
         n--;
@@ -143,7 +146,7 @@ function selectionShort() {
 
 function logTidy(i) {
     for (var p = 0; p <= i; p++) {
-        $('#main').find('.vector .item' + p).addClass('tidy');
+        $('#main').find('.vector.main .item' + p).addClass('tidy');
     }
 }
 
@@ -163,8 +166,8 @@ function logAuxVar(aux_pos, aux_val) {
     $('.auxVar.aux .selector').html(aux_pos);
     $('.auxVar.aux  .content').html(aux_val);
 
-    $('#main').find('.vector .item').removeClass('smaller');
-    $('#main').find('.vector .item' + aux_pos).addClass('smaller');
+    $('#main').find('.vector.main .item').removeClass('smaller');
+    $('#main').find('.vector.main .item' + aux_pos).addClass('smaller');
 }
 
 function logChange(i, aux_pos) {
